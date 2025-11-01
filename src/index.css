@@ -1,0 +1,404 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 6%; /* Deep dark background */
+    --foreground: 0 0% 96%; /* Clean white text */
+
+    --card: 0 0% 10%; /* Card background */
+    --card-foreground: 0 0% 96%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 96%;
+
+    --primary: 142 76% 36%; /* Financial green */
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 0 0% 14%; /* Subtle secondary */
+    --secondary-foreground: 0 0% 96%;
+
+    --muted: 0 0% 18%; /* Muted elements */
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 199 89% 48%; /* Finance blue accent */
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84% 60%; /* Red for losses */
+    --destructive-foreground: 210 40% 98%;
+
+    --success: 142 76% 36%; /* Green for gains */
+    --success-foreground: 0 0% 98%;
+
+    --warning: 38 92% 50%; /* Orange for warnings */
+    --warning-foreground: 0 0% 98%;
+
+    --border: 0 0% 20%; /* Subtle borders */
+    --input: 0 0% 18%;
+    --ring: 142 76% 36%;
+
+    --radius: 0.75rem;
+  }
+
+  /* Varsayılan koyu mod */
+  html, body {
+    color-scheme: dark;
+  }
+  html, body, #root {
+    background-color: hsl(var(--background));
+  }
+
+  /* Light mode tamamen kaldırıldı */
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background font-inter text-foreground antialiased;
+    letter-spacing: -0.025em;
+  }
+  
+  ::selection {
+    @apply bg-primary text-primary-foreground;
+  }
+
+  .cosmic-gradient {
+    background: linear-gradient(135deg, rgba(64, 64, 64, 0.2) 0%, rgba(32, 32, 32, 0.4) 100%);
+  }
+
+  .light-mode .cosmic-gradient {
+    background: linear-gradient(135deg, rgba(230, 230, 230, 0.8) 0%, rgba(200, 200, 200, 0.6) 100%);
+  }
+
+  .cosmic-glow {
+    position: relative;
+  }
+
+  .cosmic-glow::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    z-index: -1;
+    border-radius: inherit;
+  }
+
+  .light-mode .cosmic-glow::before {
+    background: radial-gradient(circle at center, rgba(64, 64, 64, 0.08) 0%, transparent 70%);
+  }
+
+  .cosmic-grid {
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+
+  .light-mode .cosmic-grid {
+    background-image: 
+      linear-gradient(rgba(64, 64, 64, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(64, 64, 64, 0.08) 1px, transparent 1px);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .cosmic-glass {
+    @apply backdrop-blur-sm bg-card border border-white/10 shadow-[0_0_15px_rgba(255,255,255,0.1)];
+  }
+
+  .light-mode .cosmic-glass {
+    @apply backdrop-blur-sm bg-card border border-black/10 shadow-[0_0_15px_rgba(0,0,0,0.05)];
+  }
+  
+  .cosmic-card {
+    @apply bg-card border border-border backdrop-blur-sm;
+  }
+  
+  .nav-pill {
+    @apply backdrop-blur-md bg-card border border-border rounded-full;
+  }
+  
+  .nav-pill-item {
+    @apply px-4 py-2 text-sm rounded-full transition-colors;
+  }
+  
+  .nav-pill-item:hover {
+    @apply bg-accent text-accent-foreground;
+  }
+  
+  .nav-pill-item.active {
+    @apply bg-accent text-accent-foreground;
+  }
+  
+  .icon-glow {
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.3));
+    transition: filter 0.3s ease;
+  }
+
+  .light-mode .icon-glow {
+    filter: drop-shadow(0 0 6px rgba(64, 64, 64, 0.2));
+  }
+  
+  .collapsible-trigger:hover .icon-glow {
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+  }
+
+  .light-mode .collapsible-trigger:hover .icon-glow {
+    filter: drop-shadow(0 0 10px rgba(64, 64, 64, 0.3));
+  }
+
+  .task-card {
+    @apply transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:border-primary/30;
+  }
+  
+  .task-card.dragging {
+    @apply scale-105 shadow-lg border-primary opacity-70 rotate-1 z-10;
+  }
+  
+  .task-card.dragged-over {
+    @apply border-primary border-dashed;
+  }
+  
+  .task-card-enter {
+    @apply opacity-0 -translate-y-4;
+  }
+  
+  .task-card-enter-active {
+    @apply opacity-100 translate-y-0 transition-all duration-300 ease-out;
+  }
+  
+  .task-card-exit {
+    @apply opacity-100;
+  }
+  
+  .task-card-exit-active {
+    @apply opacity-0 translate-y-4 transition-all duration-300 ease-in;
+  }
+  
+  .column-highlight {
+    @apply bg-accent/20 transition-all duration-300;
+  }
+  
+  .scrollbar-hide {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .financial-glow {
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.2);
+  }
+
+  .financial-card {
+    background: linear-gradient(135deg, rgba(16, 16, 16, 0.8) 0%, rgba(32, 32, 32, 0.9) 100%);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(34, 197, 94, 0.1);
+  }
+
+  .price-positive {
+    color: hsl(var(--success));
+  }
+
+  .price-negative {
+    color: hsl(var(--destructive));
+  }
+
+  /* Mobile App Styles */
+  .mobile-app {
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .mobile-app * {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .mobile-app input,
+  .mobile-app textarea {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+  }
+
+  /* Enhanced touch targets for mobile */
+  @media (max-width: 768px) {
+    .touch-target {
+      min-height: 44px;
+      min-width: 44px;
+    }
+    
+    .card {
+      transition: transform 0.1s ease-out;
+    }
+    
+    .card:active {
+      transform: scale(0.98);
+    }
+
+    /* Prevent keyboard from hiding input fields */
+    input:focus,
+    textarea:focus,
+    select:focus {
+      scroll-margin-top: 100px;
+      scroll-margin-bottom: 100px;
+    }
+
+    /* Ensure input fields are visible when keyboard opens */
+    body.keyboard-open {
+      position: fixed;
+      width: 100%;
+    }
+
+    /* Better input visibility */
+    input,
+    textarea {
+      font-size: 16px !important; /* Prevents zoom on iOS */
+      min-height: 44px;
+    }
+
+    /* Adjust viewport when keyboard is open */
+    @supports (-webkit-touch-callout: none) {
+      input:focus,
+      textarea:focus {
+        position: relative;
+        z-index: 1000;
+      }
+    }
+  }
+
+  /* Smooth scrolling for mobile */
+  .scrollbar-hide {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Keyboard avoidance for iOS */
+  @supports (-webkit-touch-callout: none) {
+    input,
+    textarea {
+      transform: translateZ(0);
+      -webkit-transform: translateZ(0);
+    }
+  }
+
+  /* PWA styles */
+  @media (display-mode: standalone) {
+    body {
+      padding-top: env(safe-area-inset-top);
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+  }
+
+  /* Safe area padding for mobile */
+  .pb-safe {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+
+  .pt-safe {
+    padding-top: max(1rem, env(safe-area-inset-top));
+  }
+
+  /* Desktop resolution compatibility */
+  @media (min-width: 1024px) {
+    .container {
+      max-width: 1280px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .container {
+      max-width: 1536px;
+    }
+  }
+
+  @media (min-width: 1536px) {
+    .container {
+      max-width: 1920px;
+    }
+  }
+
+  /* High DPI screen support */
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  }
+
+  /* Prevent text from being too small on any screen */
+  @media (max-width: 640px) {
+    body {
+      font-size: 16px;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+    }
+
+    h3 {
+      font-size: 1.125rem;
+    }
+  }
+
+  /* Smooth keyboard transitions */
+  @media (max-width: 768px) {
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Fix for viewport height on mobile when keyboard opens */
+    .min-h-screen {
+      min-height: 100vh;
+      min-height: -webkit-fill-available;
+    }
+
+    html {
+      height: -webkit-fill-available;
+    }
+  }
+
+  /* Input focus improvements */
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+
+  /* Better form field visibility */
+  .form-field-wrapper {
+    position: relative;
+    margin-bottom: 1rem;
+  }
+
+  /* Ensure modals and dialogs work well on all screens */
+  @media (max-width: 768px) {
+    [role="dialog"],
+    .dialog-content {
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+  }
+}
