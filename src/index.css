@@ -1,5 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,398 +6,227 @@
 
 @layer base {
   :root {
-    --background: 0 0% 6%; /* Deep dark background */
-    --foreground: 0 0% 96%; /* Clean white text */
+    --background: 45 30% 98%;
+    --foreground: 220 20% 15%;
 
-    --card: 0 0% 10%; /* Card background */
-    --card-foreground: 0 0% 96%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 15%;
 
-    --popover: 0 0% 10%;
-    --popover-foreground: 0 0% 96%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 15%;
 
-    --primary: 142 76% 36%; /* Financial green */
-    --primary-foreground: 0 0% 98%;
+    --primary: 160 45% 40%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 14%; /* Subtle secondary */
-    --secondary-foreground: 0 0% 96%;
+    --secondary: 45 20% 92%;
+    --secondary-foreground: 220 20% 25%;
 
-    --muted: 0 0% 18%; /* Muted elements */
-    --muted-foreground: 0 0% 65%;
+    --muted: 45 15% 94%;
+    --muted-foreground: 220 10% 45%;
 
-    --accent: 199 89% 48%; /* Finance blue accent */
-    --accent-foreground: 0 0% 98%;
+    --accent: 35 85% 55%;
+    --accent-foreground: 35 90% 15%;
 
-    --destructive: 0 84% 60%; /* Red for losses */
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
 
-    --success: 142 76% 36%; /* Green for gains */
-    --success-foreground: 0 0% 98%;
-
-    --warning: 38 92% 50%; /* Orange for warnings */
-    --warning-foreground: 0 0% 98%;
-
-    --border: 0 0% 20%; /* Subtle borders */
-    --input: 0 0% 18%;
-    --ring: 142 76% 36%;
+    --border: 220 13% 88%;
+    --input: 220 13% 88%;
+    --ring: 160 45% 40%;
 
     --radius: 0.75rem;
+
+    --success: 142 70% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 35 85% 55%;
+    --warning-foreground: 35 90% 15%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Custom gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(160 45% 40%), hsl(160 50% 50%));
+    --gradient-accent: linear-gradient(135deg, hsl(35 85% 55%), hsl(35 90% 65%));
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(45 20% 98%));
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+    --shadow-glow: 0 0 20px hsl(160 45% 40% / 0.2);
   }
 
-  /* Varsayılan koyu mod */
-  html, body {
-    color-scheme: dark;
-  }
-  html, body, #root {
-    background-color: hsl(var(--background));
-  }
+  .dark {
+    --background: 220 20% 10%;
+    --foreground: 45 20% 95%;
 
-  /* Light mode tamamen kaldırıldı */
+    --card: 220 18% 13%;
+    --card-foreground: 45 20% 95%;
 
+    --popover: 220 18% 13%;
+    --popover-foreground: 45 20% 95%;
+
+    --primary: 160 50% 50%;
+    --primary-foreground: 220 20% 10%;
+
+    --secondary: 220 15% 18%;
+    --secondary-foreground: 45 20% 90%;
+
+    --muted: 220 15% 18%;
+    --muted-foreground: 220 10% 55%;
+
+    --accent: 35 85% 55%;
+    --accent-foreground: 35 90% 15%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 22%;
+    --input: 220 15% 22%;
+    --ring: 160 50% 50%;
+
+    --success: 142 70% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
   * {
     @apply border-border;
   }
 
   body {
-    @apply bg-background font-inter text-foreground antialiased;
-    letter-spacing: -0.025em;
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-card/80 backdrop-blur-sm border border-border/50;
   }
   
-  ::selection {
-    @apply bg-primary text-primary-foreground;
-  }
-
-  .cosmic-gradient {
-    background: linear-gradient(135deg, rgba(64, 64, 64, 0.2) 0%, rgba(32, 32, 32, 0.4) 100%);
-  }
-
-  .light-mode .cosmic-gradient {
-    background: linear-gradient(135deg, rgba(230, 230, 230, 0.8) 0%, rgba(200, 200, 200, 0.6) 100%);
-  }
-
-  .cosmic-glow {
-    position: relative;
-  }
-
-  .cosmic-glow::before {
-    content: "";
-    position: absolute;
-    top: -20px;
-    left: -20px;
-    right: -20px;
-    bottom: -20px;
-    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-    z-index: -1;
-    border-radius: inherit;
-  }
-
-  .light-mode .cosmic-glow::before {
-    background: radial-gradient(circle at center, rgba(64, 64, 64, 0.08) 0%, transparent 70%);
-  }
-
-  .cosmic-grid {
-    background-image: 
-      linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-    background-size: 30px 30px;
-  }
-
-  .light-mode .cosmic-grid {
-    background-image: 
-      linear-gradient(rgba(64, 64, 64, 0.08) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(64, 64, 64, 0.08) 1px, transparent 1px);
-  }
-
-  .text-balance {
-    text-wrap: balance;
+  .gradient-primary {
+    background: var(--gradient-primary);
   }
   
-  .cosmic-glass {
-    @apply backdrop-blur-sm bg-card border border-white/10 shadow-[0_0_15px_rgba(255,255,255,0.1)];
-  }
-
-  .light-mode .cosmic-glass {
-    @apply backdrop-blur-sm bg-card border border-black/10 shadow-[0_0_15px_rgba(0,0,0,0.05)];
+  .gradient-accent {
+    background: var(--gradient-accent);
   }
   
-  .cosmic-card {
-    @apply bg-card border border-border backdrop-blur-sm;
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+}
+
+@layer components {
+  .checklist-btn {
+    @apply relative flex flex-col items-center justify-center gap-2 p-6 rounded-2xl border-2 transition-all duration-300 cursor-pointer select-none;
+    @apply hover:scale-[1.02] active:scale-[0.98];
   }
   
-  .nav-pill {
-    @apply backdrop-blur-md bg-card border border-border rounded-full;
+  .checklist-btn-unchecked {
+    @apply bg-card border-border text-foreground shadow-md;
+    @apply hover:border-primary/50 hover:shadow-lg;
   }
   
-  .nav-pill-item {
-    @apply px-4 py-2 text-sm rounded-full transition-colors;
+  .checklist-btn-checked {
+    @apply bg-primary border-primary text-primary-foreground shadow-glow;
   }
   
-  .nav-pill-item:hover {
-    @apply bg-accent text-accent-foreground;
+  .section-card {
+    @apply bg-card rounded-2xl border border-border p-6 shadow-md;
   }
   
-  .nav-pill-item.active {
-    @apply bg-accent text-accent-foreground;
+  .form-section {
+    @apply space-y-4;
   }
   
-  .icon-glow {
-    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.3));
-    transition: filter 0.3s ease;
+  .ai-panel {
+    @apply bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl border border-primary/20 p-6;
   }
+}
 
-  .light-mode .icon-glow {
-    filter: drop-shadow(0 0 6px rgba(64, 64, 64, 0.2));
-  }
-  
-  .collapsible-trigger:hover .icon-glow {
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
-  }
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
 
-  .light-mode .collapsible-trigger:hover .icon-glow {
-    filter: drop-shadow(0 0 10px rgba(64, 64, 64, 0.3));
-  }
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+  border-radius: 3px;
+}
 
-  .task-card {
-    @apply transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:border-primary/30;
-  }
-  
-  .task-card.dragging {
-    @apply scale-105 shadow-lg border-primary opacity-70 rotate-1 z-10;
-  }
-  
-  .task-card.dragged-over {
-    @apply border-primary border-dashed;
-  }
-  
-  .task-card-enter {
-    @apply opacity-0 -translate-y-4;
-  }
-  
-  .task-card-enter-active {
-    @apply opacity-100 translate-y-0 transition-all duration-300 ease-out;
-  }
-  
-  .task-card-exit {
-    @apply opacity-100;
-  }
-  
-  .task-card-exit-active {
-    @apply opacity-0 translate-y-4 transition-all duration-300 ease-in;
-  }
-  
-  .column-highlight {
-    @apply bg-accent/20 transition-all duration-300;
-  }
-  
-  .scrollbar-hide {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-  
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
-  }
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 3px;
+}
 
-  .financial-glow {
-    box-shadow: 0 0 20px rgba(34, 197, 94, 0.2);
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
+}
+
+/* Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
-
-  .financial-card {
-    background: linear-gradient(135deg, rgba(16, 16, 16, 0.8) 0%, rgba(32, 32, 32, 0.9) 100%);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(34, 197, 94, 0.1);
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
+}
 
-  .price-positive {
-    color: hsl(var(--success));
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-
-  .price-negative {
-    color: hsl(var(--destructive));
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
+}
 
-  /* Mobile App Styles */
-  .mobile-app {
-    overflow-x: hidden;
-    -webkit-tap-highlight-color: transparent;
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
   }
-
-  .mobile-app * {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  50% {
+    opacity: 0.7;
   }
+}
 
-  .mobile-app input,
-  .mobile-app textarea {
-    -webkit-user-select: text;
-    -moz-user-select: text;
-    -ms-user-select: text;
-    user-select: text;
-  }
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out forwards;
+}
 
-  /* Enhanced touch targets for mobile */
-  @media (max-width: 768px) {
-    .touch-target {
-      min-height: 44px;
-      min-width: 44px;
-    }
-    
-    .card {
-      transition: transform 0.1s ease-out;
-    }
-    
-    .card:active {
-      transform: scale(0.98);
-    }
+.animate-slide-up {
+  animation: slide-up 0.4s ease-out forwards;
+}
 
-    /* Prevent keyboard from hiding input fields */
-    input:focus,
-    textarea:focus,
-    select:focus {
-      scroll-margin-top: 100px;
-      scroll-margin-bottom: 100px;
-    }
-
-    /* Ensure input fields are visible when keyboard opens */
-    body.keyboard-open {
-      position: fixed;
-      width: 100%;
-    }
-
-    /* Better input visibility */
-    input,
-    textarea {
-      font-size: 16px !important; /* Prevents zoom on iOS */
-      min-height: 44px;
-    }
-
-    /* Adjust viewport when keyboard is open */
-    @supports (-webkit-touch-callout: none) {
-      input:focus,
-      textarea:focus {
-        position: relative;
-        z-index: 1000;
-      }
-    }
-  }
-
-  /* Smooth scrolling for mobile */
-  .scrollbar-hide {
-    -webkit-overflow-scrolling: touch;
-  }
-
-  /* Keyboard avoidance for iOS */
-  @supports (-webkit-touch-callout: none) {
-    input,
-    textarea {
-      transform: translateZ(0);
-      -webkit-transform: translateZ(0);
-    }
-  }
-
-  /* PWA styles */
-  @media (display-mode: standalone) {
-    body {
-      padding-top: env(safe-area-inset-top);
-      padding-bottom: env(safe-area-inset-bottom);
-    }
-  }
-
-  /* Safe area padding for mobile */
-  .pb-safe {
-    padding-bottom: max(1rem, env(safe-area-inset-bottom));
-  }
-
-  .pt-safe {
-    padding-top: max(1rem, env(safe-area-inset-top));
-  }
-
-  /* Desktop resolution compatibility */
-  @media (min-width: 1024px) {
-    .container {
-      max-width: 1280px;
-    }
-  }
-
-  @media (min-width: 1280px) {
-    .container {
-      max-width: 1536px;
-    }
-  }
-
-  @media (min-width: 1536px) {
-    .container {
-      max-width: 1920px;
-    }
-  }
-
-  /* High DPI screen support */
-  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    body {
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-  }
-
-  /* Prevent text from being too small on any screen */
-  @media (max-width: 640px) {
-    body {
-      font-size: 16px;
-    }
-
-    h1 {
-      font-size: 1.5rem;
-    }
-
-    h2 {
-      font-size: 1.25rem;
-    }
-
-    h3 {
-      font-size: 1.125rem;
-    }
-  }
-
-  /* Smooth keyboard transitions */
-  @media (max-width: 768px) {
-    html {
-      scroll-behavior: smooth;
-    }
-
-    /* Fix for viewport height on mobile when keyboard opens */
-    .min-h-screen {
-      min-height: 100vh;
-      min-height: -webkit-fill-available;
-    }
-
-    html {
-      height: -webkit-fill-available;
-    }
-  }
-
-  /* Input focus improvements */
-  input:focus-visible,
-  textarea:focus-visible,
-  select:focus-visible {
-    outline: 2px solid hsl(var(--ring));
-    outline-offset: 2px;
-  }
-
-  /* Better form field visibility */
-  .form-field-wrapper {
-    position: relative;
-    margin-bottom: 1rem;
-  }
-
-  /* Ensure modals and dialogs work well on all screens */
-  @media (max-width: 768px) {
-    [role="dialog"],
-    .dialog-content {
-      max-height: 90vh;
-      overflow-y: auto;
-    }
-  }
+.animate-pulse-soft {
+  animation: pulse-soft 2s ease-in-out infinite;
 }

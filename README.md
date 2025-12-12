@@ -1,153 +1,73 @@
-# Nexono Finans - AI Destekli Finansal Platform
+# Welcome to your Lovable project
 
-Modern ve akıllı finansal analiz platformu. OpenRouter AI (Qwen 2.5 VL) entegrasyonu ile kullanıcılara profesyonel finansal tavsiyeler ve gelecek tahminleri sunar.
+## Project info
 
-## 🚀 Özellikler
+**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
 
-- **AI Finansal Danışman**: OpenRouter AI (Qwen 2.5 VL) ile entegre akıllı finansal analiz
-- **Portföy Analizi**: Kullanıcı portföyünün detaylı analizi ve gelecek tahminleri
-- **Gerçek Zamanlı Veriler**: BIST hisseleri ve kripto para fiyatları
-- **Teknik Analiz**: Grafik ve trend analizleri
-- **Mobil Uyumlu**: Responsive tasarım ve PWA desteği
-- **Firebase Entegrasyonu**: Güvenli kullanıcı yönetimi ve veri saklama
+## How can I edit this code?
 
-## 🤖 AI Entegrasyonu
+There are several ways of editing your application.
 
-Bu platform Nexono AI ile entegre olarak:
+**Use Lovable**
 
-- **Portföy Analizi**: Kullanıcının tüm varlıklarını analiz eder
-- **Gelecek Tahminleri**: Yüksek doğruluk payında fiyat tahminleri
-- **Finansal Tavsiyeler**: Profesyonel yatırım önerileri
-- **Risk Analizi**: Portföy risk dağılımı değerlendirmesi
-- **Teknik Analiz**: Grafik ve trend analizleri
+Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
 
-Nexono AI kullanıcıya "efendim" diye hitap eder ve Türkçe profesyonel finansal terminoloji kullanır.
+Changes made via Lovable will be committed automatically to this repo.
 
-## 🛠️ Kurulum
+**Use your preferred IDE**
 
-### Gereksinimler
+If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
 
-- Node.js 18+
-- npm veya yarn
-- OpenRouter API Key
-- Firebase projesi
+The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-### Adımlar
+Follow these steps:
 
-```bash
-# 1. Projeyi klonlayın
+```sh
+# Step 1: Clone the repository using the project's Git URL.
 git clone <YOUR_GIT_URL>
-cd nexono-finans
 
-# 2. Bağımlılıkları yükleyin
-npm install
+# Step 2: Navigate to the project directory.
+cd <YOUR_PROJECT_NAME>
 
-# 3. Environment variables ayarlayın
-cp .env.example .env
-# .env dosyasını düzenleyerek API anahtarlarınızı ekleyin
+# Step 3: Install the necessary dependencies.
+npm i
 
-# 4. Development server'ı başlatın
+# Step 4: Start the development server with auto-reloading and an instant preview.
 npm run dev
-
-# 5. Veri sunucusunu başlatın (ayrı terminal)
-npm run server
 ```
 
-### Environment Variables
+**Edit a file directly in GitHub**
 
-`.env` dosyasında aşağıdaki değişkenleri ayarlayın:
+- Navigate to the desired file(s).
+- Click the "Edit" button (pencil icon) at the top right of the file view.
+- Make your changes and commit the changes.
 
-```env
-# OpenRouter AI API Key
-VITE_OPENROUTER_API_KEY=your_openrouter_api_key_here
+**Use GitHub Codespaces**
 
-# Firebase Configuration
-VITE_FIREBASE_API_KEY=your_firebase_api_key
-VITE_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
-VITE_FIREBASE_PROJECT_ID=your_project_id
-VITE_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
-VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
-VITE_FIREBASE_APP_ID=your_app_id
-```
+- Navigate to the main page of your repository.
+- Click on the "Code" button (green button) near the top right.
+- Select the "Codespaces" tab.
+- Click on "New codespace" to launch a new Codespace environment.
+- Edit files directly within the Codespace and commit and push your changes once you're done.
 
-## 📱 Kullanım
+## What technologies are used for this project?
 
-### Nexono AI
+This project is built with:
 
-1. **Dashboard'da**: Header'daki "NEXONO AI" butonuna tıklayın
-2. **Sohbet**: AI ile finansal konularda sohbet edin, analiz isteyin
-3. **Portföy Analizi**: AI otomatik olarak portföyünüzü görür ve analiz eder
+- Vite
+- TypeScript
+- React
+- shadcn-ui
+- Tailwind CSS
 
-### Portföy Yönetimi
+## How can I deploy this project?
 
-- Varlık ekleme/çıkarma
-- Gerçek zamanlı kar/zarar takibi
-- AI destekli portföy analizi
+Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
 
-### Piyasa Analizi
+## Can I connect a custom domain to my Lovable project?
 
-- BIST hisse senetleri
-- Kripto para birimleri
-- Gerçek zamanlı fiyat takibi
-- Teknik analiz grafikleri
+Yes, you can!
 
-## 🏗️ Teknolojiler
+To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
-- **Frontend**: React 18, TypeScript, Vite
-- **UI**: shadcn/ui, Tailwind CSS, Framer Motion
-- **Backend**: Node.js, Express
-- **AI**: Nexono AI (OpenRouter - Qwen 2.5 VL 32B)
-- **Database**: Firebase Firestore
-- **Authentication**: Firebase Auth
-- **Charts**: Recharts
-- **Real-time Data**: Yahoo Finance API, CoinGecko API
-
-## 📊 API Entegrasyonları
-
-- **Yahoo Finance**: BIST hisse senedi verileri
-- **CoinGecko**: Kripto para verileri
-- **Nexono AI**: AI finansal analiz
-- **Firebase**: Kullanıcı yönetimi ve veri saklama
-
-## 🚀 Deployment
-
-### Vercel (Önerilen)
-
-```bash
-# Vercel CLI ile
-npm i -g vercel
-vercel
-
-# Veya GitHub ile otomatik deployment
-```
-
-### Diğer Platformlar
-
-- Netlify
-- Railway
-- Heroku
-- AWS Amplify
-
-## 📝 Lisans
-
-Bu proje MIT lisansı altında lisanslanmıştır.
-
-## 🤝 Katkıda Bulunma
-
-1. Fork yapın
-2. Feature branch oluşturun (`git checkout -b feature/amazing-feature`)
-3. Commit yapın (`git commit -m 'Add amazing feature'`)
-4. Push yapın (`git push origin feature/amazing-feature`)
-5. Pull Request oluşturun
-
-## 📞 İletişim
-
-- **Proje URL**: https://lovable.dev/projects/bb45fe55-9940-4055-a46f-2de2effdefa7
-- **Issues**: GitHub Issues kullanın
-
----
-
-**Not**: Bu platform eğitim amaçlıdır. Gerçek yatırım kararları almadan önce profesyonel finansal danışmanlık alın.
-"# nexono-1kasim" 
-"# nexono-1kasim" 
-"# nexono-1kasim" 
+Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
